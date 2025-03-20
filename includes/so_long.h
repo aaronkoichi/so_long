@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/20 16:02:12 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/20 17:00:39 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include "../libft/libft.h"
 # include <fcntl.h>
 
-# define XK_w 119
-# define XK_a 97
-# define XK_s 115
-# define XK_d 100
+# define XK_W 119
+# define XK_A 97
+# define XK_S 115
+# define XK_D 100
 
 typedef struct s_data {
 	void	*mlx_ptr;
