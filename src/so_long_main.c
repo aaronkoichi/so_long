@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:45:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/20 16:16:56 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/20 17:10:19 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int main(int argc, char **argv)
 	t_data	data;
 	int		fd;
 
-	if (argc == 2)
+	if (argc != 2)
 		exit(error_exit(1));
 	fd = open(argv[1], O_RDONLY);
-	if (!fd)
+	if (!fd || ft_strbcmp(argv[1], ".ber", 4))
 		exit(error_exit(2));
 	process_map(fd);
 	close(fd);
