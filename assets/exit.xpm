@@ -1,0 +1,31 @@
+/* XPM */
+static const char *exit[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 9 1 ",
+"  c #141B1B",
+". c #8F3E56",
+"X c #965340",
+"o c #A3754E",
+"O c #D3865F",
+"+ c #FFAD5D",
+"@ c #F1C471",
+"# c white",
+"$ c None",
+/* pixels */
+"$   $$$$$$$$   $",
+"$ o          o $",
+" .o.OOOOOOOO.o. ",
+" ...OOOOOOOO... ",
+"$ . XXXX  XX . $",
+"$   OOO @ OO   $",
+"$$$ +O @@ O+ $$$",
+"$$$ + @#   + $$$",
+"$$$ + #### + $$$",
+"$$$ +   ## + $$$",
+"$   +++ @ ++   $",
+"$ o +++ @ ++ o $",
+" .o.OO+  +OO.o. ",
+" .. OOOOOOOO .. ",
+"$ .          . $",
+"$   $$$$$$$$   $"
+};

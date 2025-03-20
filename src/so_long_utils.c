@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/20 14:17:10 by zlee             ###   ########.fr       */
+/*   Created: 2025/03/20 13:57:08 by zlee              #+#    #+#             */
+/*   Updated: 2025/03/20 13:59:30 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include "../mlx_linux/mlx.h"
-# include "../libft/libft.h"
+#include "../includes/so_long.h"
 
-# define XK_w 119
-# define XK_a 97
-# define XK_s 115
-# define XK_d 100
-
-
-int	error_exit(int error_num);
-#endif
+int	error_exit(int error_num)
+{
+	if (error_num == 1)
+		ft_putstr_fd("Error: invalid parameters entered.\n", 2);
+	return (EXIT_FAILURE);
+}
