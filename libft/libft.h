@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:25:21 by zlee              #+#    #+#             */
-/*   Updated: 2025/01/17 17:59:18 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/20 16:22:41 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <sys/select.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
@@ -28,6 +29,7 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strbcmp(const char *s1, const char *s2, size_t n);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s);
 int		ft_isalpha(int c);
