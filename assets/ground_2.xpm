@@ -1,0 +1,25 @@
+/* XPM */
+static const char *ground_2[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c #8B9150",
+". c #557D55",
+"X c white",
+/* pixels */
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"   .            ",
+"   . .          ",
+" . . .          ",
+"                ",
+"                "
+};
