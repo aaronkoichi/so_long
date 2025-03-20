@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/03/19 23:24:34 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/20 15:37:36 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ INCLUDES = -Iincludes/
 
 SRC_FOLDER = ./src
 
-SRCS = $(SRC_FOLDER)/so_long_main.c
+SRCS = $(SRC_FOLDER)/so_long_main.c \
+	   $(SRC_FOLDER)/so_long_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

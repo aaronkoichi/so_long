@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/20 14:17:10 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/20 15:36:03 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define XK_a 97
 # define XK_s 115
 # define XK_d 100
-
 
 int	error_exit(int error_num);
 #endif
