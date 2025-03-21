@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstfirst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:27:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 12:46:34 by zlee             ###   ########.fr       */
+/*   Created: 2025/03/21 13:27:26 by zlee              #+#    #+#             */
+/*   Updated: 2025/03/21 13:29:03 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstfirst(t_list *lst)
 {
-	if (n == -2147483648)
-	{
-		(void)!write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		(void)!write(fd, "-", 1);
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + 48, fd);
+	if (!lst)
+		return (NULL);
+	while (lst->prev)
+		lst = lst->prev;
+	return (lst);
 }
-//
-//int	main(void)
-//{
-	//ft_putnbr_fd(12121212, 1);
-//}

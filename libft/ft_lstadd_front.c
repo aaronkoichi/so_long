@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 07:38:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/01/15 22:07:13 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 13:26:35 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	{
 		*lst = new;
 		(*lst)->next = NULL;
+		(*lst)->prev = NULL;
 	}
 	else
 	{
+		(*lst)->prev = new;
 		new->next = *lst;
+		new->prev = NULL;
 		*lst = new;
 	}
 }

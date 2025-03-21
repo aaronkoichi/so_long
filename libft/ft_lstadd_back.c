@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:25:49 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/14 08:12:40 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 13:15:35 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		while ((*lst)->next)
 			lst = &(*lst)->next;
+		new->prev = *lst;
 		(*lst)->next = new;
 		(*lst)->next->next = NULL;
 		lst = &temp;

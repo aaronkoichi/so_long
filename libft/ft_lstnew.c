@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:45:21 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/11 09:18:58 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 11:02:53 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_list	*ft_lstnew(void	*content)
 	new_lst = (t_list *)malloc(sizeof(t_list));
 	if (!new_lst)
 		return (NULL);
+	new_lst->prev = NULL;
 	new_lst->content = content;
 	new_lst->next = NULL;
 	return (new_lst);

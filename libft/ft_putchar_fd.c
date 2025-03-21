@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:19:35 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/07 09:12:15 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 12:50:29 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	(void)!write(fd, &c, 1);
 }
 /*
 int	main(void)

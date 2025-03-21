@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:25:21 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/20 16:22:41 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 13:27:00 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 typedef struct s_list
 {
+	struct s_list	*prev;
 	void			*content;
 	struct s_list	*next;
 }	t_list;
@@ -29,7 +30,7 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_strbcmp(const char *s1, const char *s2, size_t n);
+int		ft_strrncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s);
 int		ft_isalpha(int c);
@@ -67,6 +68,7 @@ char	*get_next_line(int fd);
 t_list	*ft_lstnew(void	*content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
+t_list	*ft_lstfirst(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
