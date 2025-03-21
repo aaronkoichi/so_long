@@ -6,13 +6,17 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 15:12:12 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 15:48:34 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-
+/*Checks all conditions at once.*/
+int	check_all_conditions(t_list *map)
+{
+	return (1);
+}
 
 /*Checks if each line contains the correct defined character.*/
 int	check_valid(t_list *map)
@@ -48,7 +52,9 @@ int	check_lines(t_list *map)
 	}
 	return (1);	
 }
-/*Process the map file based on the .ber file inputed. */
+/*Process the map file based on the .ber file inputed.
+ - returns 1 if the map is ready to be processed;
+  - returns 0 if the map has a major error. */
 void	process_map(int fd)
 {
 	t_list	*map;
@@ -64,9 +70,7 @@ void	process_map(int fd)
 	}
 	if (!check_lines(map))
 		(void)!error_exit(3);
-	else
-	{
-		
-	}
+	if (!check_all_conditions(map))
+		error_exit(3);
 	ft_lstclear(&map, free);
 }

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 15:16:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 16:08:02 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@ typedef struct s_data {
 	void	*win_ptr;
 }	t_data;
 
-int	error_exit(int error_num);
-/*maps*/
+int		error_exit(int error_num);
+/*maps - walls*/
 int		check_middle_wall(char *map_line);
 int		check_first_last_wall(char *map_line);
 int		check_all_walls(t_list *map);
+/*Check valid input*/
 int		check_valid(t_list *map);
 int		check_lines(t_list *map);
 void	process_map(int fd);
+/*Check map items*/
+int		check_map_parameters_line(char *map_line);
+int 	check_map_parameters(t_list *map);
 #endif
