@@ -6,13 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:48:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 16:06:15 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 16:42:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-
 
 int check_map_parameters(t_list *map)
 {

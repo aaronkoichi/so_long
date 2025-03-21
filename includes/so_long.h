@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 16:08:02 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/21 16:51:37 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,7 @@ void	process_map(int fd);
 /*Check map items*/
 int		check_map_parameters_line(char *map_line);
 int 	check_map_parameters(t_list *map);
+/*Flood Fill*/
+int		flood_fill_main(t_list *map);
+void	flood_fill(t_list **map, int x, int y);
 #endif
