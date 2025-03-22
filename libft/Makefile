@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 20:26:22 by zlee              #+#    #+#              #
-#    Updated: 2025/03/21 13:30:10 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/22 13:38:47 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 
 BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-			ft_lstmap.c ft_lstfirst.c
+			ft_lstmap.c ft_lstfirst.c ft_lstdup.c
 
 NAME = libft.a
 
@@ -34,7 +34,7 @@ CC = cc
 all : $(NAME)
 
 bonus: $(OBJ) $(OBJ_BONUS)
-	ar rcs -lasan $(NAME) $^
+	ar rcs $(NAME) $^
 
 $(NAME) : $(OBJ)
 	ar rcs $@ $^

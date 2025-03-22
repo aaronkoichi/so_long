@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 17:05:33 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/22 13:38:49 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@ int	flood_fill_main(t_list *map)
 {
 	t_list	*temp;
 
-	temp = map;
+	temp = ft_lstdup(temp);
 	flood_fill(&temp, 0, 0);
 	return (0);
 }
+
 
 /*Flood Fill Algorithm*/
 void	flood_fill(t_list **map, int x, int y)
 {
 	*map = ft_lstfirst(*map);
-	if (x < 0 || x > ft_strlen((char *)(*map)->content) || y < 0
-	|| y > ft_lstsize(*map))
+	if (x < 0 || x >= ft_strlen((char *)(*map)->content) || y < 0
+	|| y >= ft_lstsize(*map))
 		return ;
 
-	while (y > 0)
+	while (y-- > 0)
 		*map = (*map)->next;
 	if (((char *)(*map)->content)[x] == '1')
 		return ;
