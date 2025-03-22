@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 15:56:42 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/22 16:02:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	search_anomaly(t_list *map)
 	{
 		index = -1;
 		temp_str = (char *)map->content;
-		while(temp_str[++index])
+		while (temp_str[++index])
 			if (temp_str[index] == 'P' || temp_str[index] == 'E'
-			|| temp_str[index] == 'C')
+				|| temp_str[index] == 'C')
 				return (1);
 		map = map->next;
 	}
@@ -44,7 +44,8 @@ static void	flood_fill(t_list **map, int x, int y)
 		return ;
 	while (temp_y-- > 0)
 		*map = (*map)->next;
-	if (((char *)(*map)->content)[x] == '1' || ((char *)(*map)->content)[x] == '2')
+	if (((char *)(*map)->content)[x] == '1'
+		|| ((char *)(*map)->content)[x] == '2')
 		return ;
 	((char *)(*map)->content)[x] = '2';
 	flood_fill(map, x + 1, y);
@@ -66,16 +67,7 @@ int	flood_fill_main(t_list *map)
 	temp = ft_lstdup(map);
 	flood_fill(&temp, x, y);
 	temp = ft_lstfirst(temp);
-	// DEBUG
-	while (temp && temp->next)
-	{
-		ft_printf("%s\n", (char *)temp->content);
-		temp = temp->next;
-	}
-	ft_printf("%s\n", (char *)temp->content);
-	temp = ft_lstfirst(temp);
-	// DEBUG END
-	if (search_anomaly(map))
+	if (search_anomaly(temp))
 	{
 		ft_lstclear(&temp, free);
 		return (0);
@@ -90,9 +82,9 @@ int	flood_fill_main(t_list *map)
 //
 // 	test = NULL;
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("111111111")));
-// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("1P0000101")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("1P00001E1")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("100100111")));
-// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("1000000E1")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("100000001")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("111111111")));
 //
 // 	flood_fill_main(test);
