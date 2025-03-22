@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 15:25:59 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/22 15:56:42 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,16 @@ static int	search_anomaly(t_list *map)
 /*Flood Fill Algorithm*/
 static void	flood_fill(t_list **map, int x, int y)
 {
+	int	temp_y;
+
+	temp_y = y;
 	*map = ft_lstfirst(*map);
 	if (x < 0 || x >= ft_strlen((char *)(*map)->content) || y < 0
 	|| y >= ft_lstsize(*map))
 		return ;
-
-	while (y-- > 0)
+	while (temp_y-- > 0)
 		*map = (*map)->next;
-	if (((char *)(*map)->content)[x] == '1')
+	if (((char *)(*map)->content)[x] == '1' || ((char *)(*map)->content)[x] == '2')
 		return ;
 	((char *)(*map)->content)[x] = '2';
 	flood_fill(map, x + 1, y);
@@ -64,6 +66,15 @@ int	flood_fill_main(t_list *map)
 	temp = ft_lstdup(map);
 	flood_fill(&temp, x, y);
 	temp = ft_lstfirst(temp);
+	// DEBUG
+	while (temp && temp->next)
+	{
+		ft_printf("%s\n", (char *)temp->content);
+		temp = temp->next;
+	}
+	ft_printf("%s\n", (char *)temp->content);
+	temp = ft_lstfirst(temp);
+	// DEBUG END
 	if (search_anomaly(map))
 	{
 		ft_lstclear(&temp, free);
@@ -73,3 +84,17 @@ int	flood_fill_main(t_list *map)
 	return (1);
 }
 
+// int main(void)
+// {
+// 	t_list	*test;
+//
+// 	test = NULL;
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("111111111")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("1P0000101")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("100100111")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("1000000E1")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("111111111")));
+//
+// 	flood_fill_main(test);
+// 	ft_lstclear(&test, free);
+// }
