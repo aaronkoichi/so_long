@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 13:38:49 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/22 15:09:34 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@
 int	flood_fill_main(t_list *map)
 {
 	t_list	*temp;
+	int		x;
+	int		y;
 
-	temp = ft_lstdup(temp);
-	flood_fill(&temp, 0, 0);
+	find_player_coordinate(map, &x, &y);
+	temp = ft_lstdup(map);
+	flood_fill(&temp, x, y);
+	temp = ft_lstfirst(temp);
+	ft_lstclear(&temp, free);
 	return (0);
 }
-
 
 /*Flood Fill Algorithm*/
 void	flood_fill(t_list **map, int x, int y)
