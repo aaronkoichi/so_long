@@ -6,31 +6,34 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 15:09:34 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/22 15:25:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-/*Act as a dummy function to return 1 or 0
- * Replace all 0, P, and E with flood fill with 2
- * Check if 0, P, and E still exists. If so, returns 0. If not, returns 1*/
-int	flood_fill_main(t_list *map)
+/*This is to search if the map still contains elements of P, E, or C
+ * after floodfilling.*/
+static int	search_anomaly(t_list *map)
 {
-	t_list	*temp;
-	int		x;
-	int		y;
+	int		index;
+	char	*temp_str;
 
-	find_player_coordinate(map, &x, &y);
-	temp = ft_lstdup(map);
-	flood_fill(&temp, x, y);
-	temp = ft_lstfirst(temp);
-	ft_lstclear(&temp, free);
+	while (map)
+	{
+		index = -1;
+		temp_str = (char *)map->content;
+		while(temp_str[++index])
+			if (temp_str[index] == 'P' || temp_str[index] == 'E'
+			|| temp_str[index] == 'C')
+				return (1);
+		map = map->next;
+	}
 	return (0);
 }
 
 /*Flood Fill Algorithm*/
-void	flood_fill(t_list **map, int x, int y)
+static void	flood_fill(t_list **map, int x, int y)
 {
 	*map = ft_lstfirst(*map);
 	if (x < 0 || x >= ft_strlen((char *)(*map)->content) || y < 0
@@ -47,3 +50,26 @@ void	flood_fill(t_list **map, int x, int y)
 	flood_fill(map, x, y + 1);
 	flood_fill(map, x, y - 1);
 }
+
+/*Act as a dummy function to return 1 or 0
+ * Replace all 0, P, and E with flood fill with 2
+ * Check if 0, P, and E still exists. If so, returns 0. If not, returns 1*/
+int	flood_fill_main(t_list *map)
+{
+	t_list	*temp;
+	int		x;
+	int		y;
+
+	find_player_coordinate(map, &x, &y);
+	temp = ft_lstdup(map);
+	flood_fill(&temp, x, y);
+	temp = ft_lstfirst(temp);
+	if (search_anomaly(map))
+	{
+		ft_lstclear(&temp, free);
+		return (0);
+	}
+	ft_lstclear(&temp, free);
+	return (1);
+}
+
