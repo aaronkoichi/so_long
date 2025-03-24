@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:20:08 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:32:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		check_all_walls(t_list *map);
 /*Check valid input*/
 int		check_valid(t_list *map);
 int		check_lines(t_list *map);
-void	process_map(int fd);
+int		process_map(int fd, t_list **map);
 /*Check map items*/
 int 	check_map_parameters(t_list *map);
 /*Flood Fill*/

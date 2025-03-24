@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:57:08 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:19:25 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:31:58 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	error_exit(int error_num)
 		ft_putstr_fd("Map Not Covered With Walls\n", 2);
 	else if (error_num == 7)
 		ft_putstr_fd("Player Not Reachable to All Elements\n", 2);
+	else if (error_num == 8)
+		ft_putstr_fd("Empty Map\n", 2);
 	return (0);
 }

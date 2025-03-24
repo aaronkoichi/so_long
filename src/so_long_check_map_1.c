@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:23:25 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:34:07 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /*Checks all conditions at once.*/
 int	check_all_conditions(t_list *map)
 {
+	if (!map)
+		return(error_exit(8));
 	if (!check_lines(map) || !check_valid(map) || !check_map_parameters(map)
 		|| !check_all_walls(map) || !flood_fill_main(map))
 		return (0);
@@ -59,24 +61,19 @@ int	check_lines(t_list *map)
 /*Process the map file based on the .ber file inputed.
  - returns 1 if the map is ready to be processed;
   - returns 0 if the map has a major error. */
-void	process_map(int fd)
+int	process_map(int fd, t_list **map)
 {
-	t_list	*map;
 	char	*string;
 	int		size;
-	int		checker;
 
-	map = NULL;
-	checker = 0;
 	string = get_next_line(fd);
 	while (string)
 	{
-		ft_lstadd_back(&map, ft_lstnew(string));
+		ft_lstadd_back(map, ft_lstnew(string));
 		string = get_next_line(fd);
 	}
-	if (!check_all_conditions(map))
-		checker = 0;
+	if (!check_all_conditions(*map))
+		return (0);
 	else
-		checker = 1;
-	ft_lstclear(&map, free);
+		return (1);
 }
