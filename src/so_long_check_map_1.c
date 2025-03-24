@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 15:48:34 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:23:25 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 /*Checks all conditions at once.*/
 int	check_all_conditions(t_list *map)
 {
-	return (1);
+	if (!check_lines(map) || !check_valid(map) || !check_map_parameters(map)
+		|| !check_all_walls(map) || !flood_fill_main(map))
+		return (0);
+	else
+		return (1);
 }
 
 /*Checks if each line contains the correct defined character.*/
@@ -31,7 +35,7 @@ int	check_valid(t_list *map)
 		while (temp[++i])
 			if (temp[i] != '0' && temp[i] != '1' && temp[i] == 'C'
 				&& temp[i] != 'E' && temp[i] != 'P')
-				return (0);
+				return (error_exit(4));
 		map = map->next;
 	}
 	return (1);
@@ -47,7 +51,7 @@ int	check_lines(t_list *map)
 	while (map)
 	{
 		if (count != ft_strlen((char *)map->content))
-			return (0);
+			return (error_exit(3));
 		map = map->next;
 	}
 	return (1);	
@@ -60,17 +64,19 @@ void	process_map(int fd)
 	t_list	*map;
 	char	*string;
 	int		size;
+	int		checker;
 
 	map = NULL;
+	checker = 0;
 	string = get_next_line(fd);
 	while (string)
 	{
 		ft_lstadd_back(&map, ft_lstnew(string));
 		string = get_next_line(fd);
 	}
-	if (!check_lines(map))
-		(void)!error_exit(3);
 	if (!check_all_conditions(map))
-		error_exit(3);
+		checker = 0;
+	else
+		checker = 1;
 	ft_lstclear(&map, free);
 }

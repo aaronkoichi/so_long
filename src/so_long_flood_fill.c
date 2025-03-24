@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:35:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 16:02:44 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:21:16 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	flood_fill_main(t_list *map)
 	if (search_anomaly(temp))
 	{
 		ft_lstclear(&temp, free);
-		return (0);
+		return (error_exit(7));
 	}
 	ft_lstclear(&temp, free);
 	return (1);

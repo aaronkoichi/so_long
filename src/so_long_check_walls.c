@@ -6,14 +6,14 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:11:55 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/21 15:19:09 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 19:19:43 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 /*Checks if the middle line of the map is a has a wall on both ends.*/
-int	check_middle_wall(char *map_line)
+static int	check_middle_wall(char *map_line)
 {
 	int	check;
 	
@@ -31,7 +31,7 @@ int	check_middle_wall(char *map_line)
 	}
 }
 /*Checks if the line has walls on both ends.*/
-int	check_first_last_wall(char *map_line)
+static int	check_first_last_wall(char *map_line)
 {
 	int	check;
 
@@ -53,12 +53,12 @@ int check_all_walls(t_list *map)
 		map = map->next;
 		while (map->next)
 		{
-			if (!check_middle_wall((char* )ft_lstfirst(map)->content))
-				return (0);
+			if (!check_middle_wall((char* )map->content))
+				return (error_exit(6));
 			map = map->next;
 		}
 		if (!check_first_last_wall((char* )ft_lstlast(map)->content))
-			return (0);
+			return (error_exit(6));
 		else
 			return (1);
 	}
