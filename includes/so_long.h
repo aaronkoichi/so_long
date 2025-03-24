@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 20:04:48 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/24 21:33:32 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "../libft/libft.h"
 # include <fcntl.h>
 
+/*pixel to sprite ratio*/
+# define MUL 32
+/* keysyms imported from keysymdef.h */
 # define XK_W 119
 # define XK_A 97
 # define XK_S 115
