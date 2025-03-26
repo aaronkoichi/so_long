@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 14:40:11 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 16:18:23 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ static int	game_movement(int keysym, t_data *data)
 
 void	mlx_start(t_list *map)
 {
-	t_data mlx;
-	int		x;
-	int		y;
+	t_data 		mlx;
+	int			x;
+	int			y;
+	t_sprite	test;
 
 	x = ft_strlen((char *)map->content) * MUL;
 	y = ft_lstsize(map) * MUL;
@@ -40,6 +41,8 @@ void	mlx_start(t_list *map)
 	if (!mlx.mlx_ptr)
 		return ;	
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, x, y, "Hello World Test");
+	set_sprites(&mlx);
+	print_ground(&mlx, map);
 	mlx_key_hook(mlx.win_ptr, game_movement, &mlx);
 	mlx_loop(mlx.mlx_ptr);
 	return ;
