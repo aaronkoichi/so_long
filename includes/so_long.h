@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 21:33:32 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 14:57:18 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ int		flood_fill_main(t_list *map);
 void	find_player_coordinate(t_list *map, int	*x, int	*y);
 /*Display creation*/
 void	mlx_start(t_list *map);
+void	remove_new_line(t_list **map);
 #endif

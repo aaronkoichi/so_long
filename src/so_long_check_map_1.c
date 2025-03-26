@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:34:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 15:11:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	check_valid(t_list *map)
 		i = -1;
 		temp = (char *)map->content;
 		while (temp[++i])
-			if (temp[i] != '0' && temp[i] != '1' && temp[i] == 'C'
-				&& temp[i] != 'E' && temp[i] != 'P')
+			if (!(temp[i] == '0' || temp[i] == '1' || temp[i] == 'C'
+				|| temp[i] == 'E' || temp[i] == 'P'))
 				return (error_exit(4));
 		map = map->next;
 	}
@@ -72,6 +72,7 @@ int	process_map(int fd, t_list **map)
 		ft_lstadd_back(map, ft_lstnew(string));
 		string = get_next_line(fd);
 	}
+	remove_new_line(map);
 	if (!check_all_conditions(*map))
 		return (0);
 	else

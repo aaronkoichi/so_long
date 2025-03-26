@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/03/22 18:00:59 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/26 14:41:03 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = $(SRC_FOLDER)/so_long_main.c \
 	   $(SRC_FOLDER)/so_long_check_map_2.c \
 	   $(SRC_FOLDER)/so_long_find_player_coordinate.c \
 	   $(SRC_FOLDER)/so_long_flood_fill.c \
+	   $(SRC_FOLDER)/so_long_mlx.c \
 
 OBJS = $(SRCS:.c=.o)
 

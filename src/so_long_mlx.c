@@ -6,13 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 21:33:46 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 14:40:11 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	game_movement(int keysym, t_data *data)
+static int	game_movement(int keysym, t_data *data)
 {
 	if (keysym == XK_W)
 		;

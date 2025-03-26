@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:57:08 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:31:58 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 15:00:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,20 @@ int	error_exit(int error_num)
 	else if (error_num == 8)
 		ft_putstr_fd("Empty Map\n", 2);
 	return (0);
+}
+
+void	remove_new_line(t_list **map)
+{
+	t_list	*head;
+	char	*temp_string;
+
+	head = *map;
+	while (*map)
+	{
+		temp_string = (char *)(*map)->content;
+		if (temp_string[ft_strlen(temp_string) - 1] == '\n')
+			((char *)(*map)->content)[ft_strlen(temp_string) - 1] = '\0';
+		*map = (*map)->next;
+	}
+	*map = head;
 }

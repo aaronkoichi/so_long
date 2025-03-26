@@ -6,15 +6,15 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:48:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/24 19:20:22 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 15:02:51 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 /*Checks if the map has one exit/player, and at least one collectible*/
-static void	check_map_parameters_line(char *map_line, int *col_count, int *e_count,
-							  int *p_count)
+static void	check_map_parameters_line(char *map_line, int *col_count,
+								int *e_count, int *p_count)
 {
 	int	c;
 
