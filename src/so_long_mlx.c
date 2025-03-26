@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 16:40:20 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/27 01:46:20 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	mlx_start(t_list *map)
 		return ;	
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, x, y, "Hello World Test");
 	set_sprites(&mlx);
-	print_all_elements(&mlx, map);
 	mlx_key_hook(mlx.win_ptr, game_movement, &mlx);
+	mlx_loop_hook(mlx.mlx_ptr, print_all_elements, &mlx);
 	mlx_loop(mlx.mlx_ptr);
 	return ;
 }

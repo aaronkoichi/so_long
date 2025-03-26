@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:03:03 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 16:46:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/27 01:45:19 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,12 @@ void	print_individual_sprites(t_data *mlx, t_list *map,
 	}
 }
 
-void	print_all_elements(t_data *mlx, t_list *map)
+int	print_all_elements(t_data *mlx)
 {
-	print_ground(mlx, map);
-	usleep(10);
-	print_individual_sprites(mlx, map, '1', 1);
-	usleep(10);
-	print_individual_sprites(mlx, map, 'P', 2);
-	usleep(10);
-	print_individual_sprites(mlx, map, 'C', 3);
-	usleep(10);
-	print_individual_sprites(mlx, map, 'E', 4);
+	print_ground(mlx, mlx->map_data);
+	print_individual_sprites(mlx, mlx->map_data, '1', 1);
+	print_individual_sprites(mlx, mlx->map_data, 'P', 2);
+	print_individual_sprites(mlx, mlx->map_data, 'C', 3);
+	print_individual_sprites(mlx, mlx->map_data, 'E', 4);
+	return (0);
 }

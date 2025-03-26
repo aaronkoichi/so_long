@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 16:35:16 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/27 01:45:37 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void		print_ground(t_data *mlx, t_list *map);
 void		set_sprites(t_data *mlx);
 void		print_individual_sprites(t_data *mlx, t_list *map,
 					char element, int num);
-void		print_all_elements(t_data *mlx, t_list *map);
+int			print_all_elements(t_data *mlx);
 #endif
