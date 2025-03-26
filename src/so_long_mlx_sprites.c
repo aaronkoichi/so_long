@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:58:42 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 16:02:52 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/26 16:43:00 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	set_sprites(t_data *mlx)
 {
 	mlx->textures[0] = create_sprite("./textures/ground_1.xpm", mlx->mlx_ptr);
 	mlx->textures[1] = create_sprite("./textures/wall.xpm", mlx->mlx_ptr);
-	mlx->textures[2] = create_sprite("./textures/charac/d_frame_1.xpm",
+	mlx->textures[2] = create_sprite("./textures/charac/s_frame_1.xpm",
 			mlx->mlx_ptr);
 	mlx->textures[3] = create_sprite("./textures/food.xpm", mlx->mlx_ptr);
 	mlx->textures[4] = create_sprite("./textures/exit.xpm", mlx->mlx_ptr);
