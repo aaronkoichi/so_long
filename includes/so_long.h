@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/27 01:45:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/28 21:46:06 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct s_data {
 	void		*win_ptr;
 	t_list		*map_data;
 	t_sprite	textures[5];
+	int			win_x;
+	int			win_y;
 }	t_data;
 
 int			error_exit(int error_num);
@@ -65,9 +67,12 @@ void		find_player_coordinate(t_list *map, int	*x, int	*y);
 void		mlx_start(t_list *map);
 void		remove_new_line(t_list **map);
 t_sprite	create_sprite(char *path, void *mlx_ptr);
-void		print_ground(t_data *mlx, t_list *map);
+void	print_ground(t_data *mlx, t_list *map, t_sprite *img);
 void		set_sprites(t_data *mlx);
-void		print_individual_sprites(t_data *mlx, t_list *map,
-					char element, int num);
+void	print_individual_sprites(t_data *mlx, t_list *map,
+				char element, int num, t_sprite *img);
 int			print_all_elements(t_data *mlx);
+void		xpm_image_transparency(t_data *data, t_sprite *sprite, t_sprite *target,
+				int offset_x, int offset_y);
+void		custom_pixel_put(t_data *data, t_sprite *spr, int x, int y, int color);
 #endif

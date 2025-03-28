@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/03/26 16:18:44 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/28 21:47:58 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS = $(SRC_FOLDER)/so_long_main.c \
 	   $(SRC_FOLDER)/so_long_mlx.c \
 	   $(SRC_FOLDER)/so_long_mlx_map.c \
 	   $(SRC_FOLDER)/so_long_mlx_sprites.c \
+	   $(SRC_FOLDER)/so_long_mlx_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 
