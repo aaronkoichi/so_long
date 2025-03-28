@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 22:30:48 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/28 23:08:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/29 00:28:57 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	game_movement(int keysym, t_data *data)
 	else if (keysym == XK_D)
 		move_right(data);
 	else if (XK_ESC)
-		; // destroy the window and exit.
+		close_win(data);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:03:03 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/28 22:04:31 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/29 00:08:16 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	print_ground(t_data *mlx, t_list *map, t_sprite *img)
 		x = 0;
 		while (((char *)map->content)[++i])
 		{
-			xpm_image_transparency(mlx, &(mlx->textures[0]), img, x, y);	
-			// mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-			// 		mlx->textures[0].img_ptr, x, y);
+			xpm_image_transparency(mlx, &(mlx->textures[0]), img, x, y);
 			x += MUL;
 		}
 		y += MUL;
@@ -50,9 +48,7 @@ void	print_individual_sprites(t_data *mlx, t_list *map,
 		while (((char *)map->content)[++i])
 		{
 			if (((char *)map->content)[i] == element)
-				xpm_image_transparency(mlx, &(mlx->textures[num]), img, x, y);	
-				// mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				// 		mlx->textures[num].img_ptr, x, y);
+				xpm_image_transparency(mlx, &(mlx->textures[num]), img, x, y);
 			x += MUL;
 		}
 		y += MUL;
@@ -62,16 +58,14 @@ void	print_individual_sprites(t_data *mlx, t_list *map,
 
 int	print_all_elements(t_data *mlx)
 {
-	t_sprite	image;
-
-	image.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->win_x, mlx->win_y);
-	image.pixels = mlx_get_data_addr(image.img_ptr, &image.bpp, &image.line_size, &image.endian);
-	print_ground(mlx, mlx->map_data, &image);
-	print_individual_sprites(mlx, mlx->map_data, '1', 1, &image);
-	print_individual_sprites(mlx, mlx->map_data, 'P', 2, &image);
-	print_individual_sprites(mlx, mlx->map_data, 'C', 3, &image);
-	print_individual_sprites(mlx, mlx->map_data, 'E', 4, &image);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, image.img_ptr, 0, 0);
-	mlx_destroy_image(mlx->mlx_ptr, image.img_ptr);
+	mlx->d_img.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->win_x, mlx->win_y);
+	mlx->d_img.pixels = mlx_get_data_addr(mlx->d_img.img_ptr, &mlx->d_img.bpp, &mlx->d_img.line_size, &mlx->d_img.endian);
+	print_ground(mlx, mlx->map_data, &mlx->d_img);
+	print_individual_sprites(mlx, mlx->map_data, '1', 1, &mlx->d_img);
+	print_individual_sprites(mlx, mlx->map_data, 'P', 2, &mlx->d_img);
+	print_individual_sprites(mlx, mlx->map_data, 'C', 3, &mlx->d_img);
+	print_individual_sprites(mlx, mlx->map_data, 'E', 4, &mlx->d_img);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->d_img.img_ptr, 0, 0);
+	mlx_destroy_image(mlx->mlx_ptr, mlx->d_img.img_ptr);
 	return (0);
 }
