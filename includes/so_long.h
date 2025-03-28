@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/28 21:46:06 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/28 23:03:20 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_data {
 	t_sprite	textures[5];
 	int			win_x;
 	int			win_y;
+	int			counter;
 }	t_data;
 
 int			error_exit(int error_num);
@@ -72,7 +73,14 @@ void		set_sprites(t_data *mlx);
 void	print_individual_sprites(t_data *mlx, t_list *map,
 				char element, int num, t_sprite *img);
 int			print_all_elements(t_data *mlx);
+/*Manipulate the pixels in the image for transparency*/
 void		xpm_image_transparency(t_data *data, t_sprite *sprite, t_sprite *target,
 				int offset_x, int offset_y);
 void		custom_pixel_put(t_data *data, t_sprite *spr, int x, int y, int color);
+/*Game Movement*/
+int			game_movement(int keysym, t_data *data);
+void		move_up(t_data *data);
+void		move_down(t_data *data);
+void		move_left(t_data *data);
+void		move_right(t_data *data);
 #endif

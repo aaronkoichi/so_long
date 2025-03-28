@@ -6,26 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/28 21:47:45 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/28 23:03:25 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-static int	game_movement(int keysym, t_data *data)
-{
-	if (keysym == XK_W)
-		;
-	else if (keysym == XK_A)
-		;
-	else if (keysym == XK_S)
-		;
-	else if (keysym == XK_D)
-		;
-	else if (XK_ESC)
-		; // destroy the window and exit.
-	return (0);
-}
 
 void	mlx_start(t_list *map)
 {
@@ -35,6 +20,7 @@ void	mlx_start(t_list *map)
 	mlx.win_x = ft_strlen((char *)map->content) * MUL;
 	mlx.win_y = ft_lstsize(map) * MUL;
 	mlx.map_data = map;
+	mlx.counter = 0;
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
 		return ;	
