@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/29 00:29:05 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 14:23:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_data {
 	int			win_y;
 	int			counter;
 	t_sprite	d_img;
+	int			exit_check;
 }	t_data;
 
 int			error_exit(int error_num);
@@ -84,5 +85,6 @@ void		move_up(t_data *data);
 void		move_down(t_data *data);
 void		move_left(t_data *data);
 void		move_right(t_data *data);
+void	movement_check(t_data *data, char *current, char *to_move);
 int			close_win(t_data *data);
 #endif
