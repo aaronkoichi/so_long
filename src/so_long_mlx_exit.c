@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:30:07 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 14:50:38 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:20:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,36 @@ static int	check_collectibles(t_list *list)
 	return (1);
 }  
 
+static void	handle_exit(t_data *data, char *current, char *to_move)
+{
+	if (check_collectibles(data->map_data))
+		close_win(data);
+	else
+	{
+		data->exit_check = 1;
+		if (*to_move != '1')
+		{
+			*to_move = 'P';
+			*current = '0';
+		}
+	}
+}
+
+static void	handle_movement(t_data *data, char *current, char *to_move)
+{
+	*to_move = 'P';
+	*current = '0';
+	if (data->exit_check == 1)
+	{
+		*current = 'E';
+		data->exit_check = 0;
+	}
+}
+
 void	movement_check(t_data *data, char *current, char *to_move)
 {
 	if (*to_move == 'E')
-	{
-		if (check_collectibles(data->map_data))
-			close_win(data);
-		else
-		{
-			data->exit_check = 1;
-			if (*to_move != '1')
-			{
-				*to_move = 'P';
-				*current = '0';
-			}
-		}
-	}
+		handle_exit(data, current, to_move);
 	else if (*to_move != '1')
-	{
-		*to_move = 'P';
-		*current = '0';
-		if (data->exit_check == 1)
-		{
-			*current = 'E';
-			data->exit_check = 0;
-		}
-	}
+		handle_movement(data, current, to_move);
 }

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 15:11:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:23:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_valid(t_list *map)
 /*Checks if the map structure is a rectangle/square or otherwise..*/
 int	check_lines(t_list *map)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	count = ft_strlen((char *)map->content);
@@ -64,7 +64,6 @@ int	check_lines(t_list *map)
 int	process_map(int fd, t_list **map)
 {
 	char	*string;
-	int		size;
 
 	string = get_next_line(fd);
 	while (string)
