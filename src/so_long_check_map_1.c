@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:30:16 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:23:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:28:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	check_all_conditions(t_list *map)
 {
 	if (!map)
-		return(error_exit(8));
+		return (error_exit(8));
 	if (!check_lines(map) || !check_valid(map) || !check_map_parameters(map)
 		|| !check_all_walls(map) || !flood_fill_main(map))
 		return (0);
@@ -29,19 +29,20 @@ int	check_valid(t_list *map)
 {
 	int		i;
 	char	*temp;
-	
+
 	while (map)
 	{
 		i = -1;
 		temp = (char *)map->content;
 		while (temp[++i])
 			if (!(temp[i] == '0' || temp[i] == '1' || temp[i] == 'C'
-				|| temp[i] == 'E' || temp[i] == 'P'))
+					|| temp[i] == 'E' || temp[i] == 'P'))
 				return (error_exit(4));
 		map = map->next;
 	}
 	return (1);
 }
+
 /*Checks if the map structure is a rectangle/square or otherwise..*/
 int	check_lines(t_list *map)
 {
@@ -56,8 +57,9 @@ int	check_lines(t_list *map)
 			return (error_exit(3));
 		map = map->next;
 	}
-	return (1);	
+	return (1);
 }
+
 /*Process the map file based on the .ber file inputed.
  - returns 1 if the map is ready to be processed;
   - returns 0 if the map has a major error. */

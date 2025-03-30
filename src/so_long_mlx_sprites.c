@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:58:42 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 16:43:00 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:45:57 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_sprite	create_sprite(char *path, void *mlx_ptr)
 {
 	t_sprite	sprite;
 
-	sprite.img_ptr = mlx_xpm_file_to_image(mlx_ptr, path, 
+	sprite.img_ptr = mlx_xpm_file_to_image(mlx_ptr, path,
 			&sprite.img_x, &sprite.img_y);
 	sprite.pixels = mlx_get_data_addr(sprite.img_ptr, &sprite.bpp,
 			&sprite.line_size, &sprite.endian);
@@ -32,4 +32,3 @@ void	set_sprites(t_data *mlx)
 	mlx->textures[3] = create_sprite("./textures/food.xpm", mlx->mlx_ptr);
 	mlx->textures[4] = create_sprite("./textures/exit.xpm", mlx->mlx_ptr);
 }
-

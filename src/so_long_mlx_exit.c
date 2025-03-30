@@ -6,13 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:30:07 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:20:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:34:12 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
- int	close_win(t_data *data)
+int	close_win(t_data *data)
 {
 	mlx_destroy_image(data->mlx_ptr, data->textures[0].img_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->textures[1].img_ptr);
@@ -33,7 +33,7 @@
  * No --> returns 1*/
 static int	check_collectibles(t_list *list)
 {
-	int i;
+	int	i;
 
 	list = ft_lstfirst(list);
 	while (list)
@@ -45,7 +45,7 @@ static int	check_collectibles(t_list *list)
 		list = list->next;
 	}
 	return (1);
-}  
+}
 
 static void	handle_exit(t_data *data, char *current, char *to_move)
 {

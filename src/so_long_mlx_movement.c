@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 22:30:48 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 15:04:41 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:45:27 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	move_up(t_data *data)
 	while (--player_y >= 0)
 		data->map_data = data->map_data->next;
 	movement_check(data, &((char *)data->map_data->content)[player_x],
-				&((char *)data->map_data->prev->content)[player_x]);
+		&((char *)data->map_data->prev->content)[player_x]);
 	data->map_data = ft_lstfirst(data->map_data);
-	ft_printf("Moves: %d\n",++(data->counter));
+	ft_printf("Moves: %d\n", ++(data->counter));
 }
 
 void	move_down(t_data *data)
@@ -39,7 +39,7 @@ void	move_down(t_data *data)
 	while (--player_y >= 0)
 		data->map_data = data->map_data->next;
 	movement_check(data, &((char *)data->map_data->content)[player_x],
-				&((char *)data->map_data->next->content)[player_x]);
+		&((char *)data->map_data->next->content)[player_x]);
 	data->map_data = ft_lstfirst(data->map_data);
 	ft_printf("Moves: %d\n", ++(data->counter));
 }
@@ -55,7 +55,7 @@ void	move_left(t_data *data)
 	while (--player_y >= 0)
 		data->map_data = data->map_data->next;
 	movement_check(data, &((char *)data->map_data->content)[player_x],
-				&((char *)data->map_data->content)[player_x - 1]);
+		&((char *)data->map_data->content)[player_x - 1]);
 	data->map_data = ft_lstfirst(data->map_data);
 	ft_printf("Moves: %d\n", ++(data->counter));
 }
@@ -71,7 +71,7 @@ void	move_right(t_data *data)
 	while (--player_y >= 0)
 		data->map_data = data->map_data->next;
 	movement_check(data, &((char *)data->map_data->content)[player_x],
-				&((char *)data->map_data->content)[player_x + 1]);
+		&((char *)data->map_data->content)[player_x + 1]);
 	data->map_data = ft_lstfirst(data->map_data);
 	ft_printf("Moves: %d\n", ++(data->counter));
 }
@@ -90,4 +90,3 @@ int	game_movement(int keysym, t_data *data)
 		close_win(data);
 	return (0);
 }
-

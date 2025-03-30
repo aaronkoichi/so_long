@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:48:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/26 15:02:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:29:31 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_map_parameters_line(char *map_line, int *col_count,
 	}
 }
 
-int check_map_parameters(t_list *map)
+int	check_map_parameters(t_list *map)
 {
 	int	col_count;
 	int	e_count;
@@ -41,8 +41,8 @@ int check_map_parameters(t_list *map)
 	p_count = 0;
 	while (map)
 	{
-		check_map_parameters_line((char *)map->content, &col_count, 
-							&e_count, &p_count);
+		check_map_parameters_line((char *)map->content, &col_count,
+			&e_count, &p_count);
 		map = map->next;
 	}
 	if (p_count != 1 || e_count != 1 || col_count < 1)
@@ -50,4 +50,3 @@ int check_map_parameters(t_list *map)
 	else
 		return (1);
 }
-

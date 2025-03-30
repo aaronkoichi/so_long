@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 14:23:59 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:59:07 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # define XK_D 100
 # define XK_ESC 65307
 /*mlx struct*/
+
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}	t_pos;
 
 typedef struct s_sprite {
 	void	*img_ptr;
@@ -62,7 +68,7 @@ int			check_valid(t_list *map);
 int			check_lines(t_list *map);
 int			process_map(int fd, t_list **map);
 /*Check map items*/
-int 		check_map_parameters(t_list *map);
+int			check_map_parameters(t_list *map);
 /*Flood Fill*/
 int			flood_fill_main(t_list *map);
 void		find_player_coordinate(t_list *map, int	*x, int	*y);
@@ -70,21 +76,21 @@ void		find_player_coordinate(t_list *map, int	*x, int	*y);
 void		mlx_start(t_list *map);
 void		remove_new_line(t_list **map);
 t_sprite	create_sprite(char *path, void *mlx_ptr);
-void	print_ground(t_data *mlx, t_list *map, t_sprite *img);
+void		print_ground(t_data *mlx, t_sprite *img);
 void		set_sprites(t_data *mlx);
-void	print_individual_sprites(t_data *mlx, t_list *map,
+void		print_individual_sprites(t_data *mlx,
 				char element, int num, t_sprite *img);
 int			print_all_elements(t_data *mlx);
 /*Manipulate the pixels in the image for transparency*/
-void		xpm_image_transparency(t_data *data, t_sprite *sprite, t_sprite *target,
-				int offset_x, int offset_y);
-void		custom_pixel_put(t_data *data, t_sprite *spr, int x, int y, int color);
+void		xpm_image_transparency(t_data *data, t_sprite *sprite,
+				t_sprite *target, t_pos offset);
+void		custom_pixel_put(t_data *data, t_sprite *spr, t_pos pos, int color);
 /*Game Movement*/
 int			game_movement(int keysym, t_data *data);
 void		move_up(t_data *data);
 void		move_down(t_data *data);
 void		move_left(t_data *data);
 void		move_right(t_data *data);
-void	movement_check(t_data *data, char *current, char *to_move);
+void		movement_check(t_data *data, char *current, char *to_move);
 int			close_win(t_data *data);
 #endif

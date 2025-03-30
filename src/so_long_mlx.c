@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 15:01:03 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/30 23:33:30 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	mlx_start(t_list *map)
 {
-	t_data 		mlx;
+	t_data	mlx;
 
 	mlx.win_x = ft_strlen((char *)map->content) * MUL;
 	mlx.win_y = ft_lstsize(map) * MUL;
@@ -23,7 +23,7 @@ void	mlx_start(t_list *map)
 	mlx.exit_check = 0;
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
-		return ;	
+		return ;
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win_x, mlx.win_y, "So Long!");
 	set_sprites(&mlx);
 	mlx_loop_hook(mlx.mlx_ptr, print_all_elements, &mlx);
