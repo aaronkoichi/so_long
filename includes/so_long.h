@@ -6,14 +6,14 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:59:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/01 17:46:33 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "../mlx_linux/mlx.h"
-# include "../libft/libft.h"
+# include "mlx.h"
+# include "libft.h"
 # include <fcntl.h>
 
 /*pixel to sprite ratio*/
@@ -42,17 +42,27 @@ typedef struct s_sprite {
 	int		endian;
 }	t_sprite;
 
+typedef struct s_spr_b
+{
+	t_sprite	left[4];
+	t_sprite	right[4];
+	t_sprite	up[4];
+	t_sprite	down[4];
+}	t_spr_b;
+
 /*Textures
  * 0 --> Ground
  * 1 --> Wall
  * 2 --> Character
  * 3 --> Collectible
- * 4 --> Exit*/
+ * 4 --> Exit
+ * 5 (BONUS) --> enemy*/
 typedef struct s_data {
 	void		*mlx_ptr;
 	void		*win_ptr;
 	t_list		*map_data;
-	t_sprite	textures[5];
+	t_spr_b		*spr_data[2];
+	t_sprite	textures[6];
 	int			win_x;
 	int			win_y;
 	int			counter;
@@ -93,4 +103,8 @@ void		move_left(t_data *data);
 void		move_right(t_data *data);
 void		movement_check(t_data *data, char *current, char *to_move);
 int			close_win(t_data *data);
+
+/*Bonus*/
+int			check_valid_bonus(t_list *map);
+void		set_spr_data(t_data *data);
 #endif

@@ -6,13 +6,13 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/03/30 23:21:51 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/01 17:35:45 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-INCLUDES = -Iincludes/
+INCLUDES = -Iincludes/ -Ilibft/
 
 SRC_FOLDER = ./src
 
@@ -43,7 +43,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	cd mlx_linux && ./configure
 	make -C libft bonus
-	$(CC) $(CFLAGS) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
 
 %.o : %.c 
 	$(CC) $(CFLAGS) $(INCLUDES) -I/usr/include -Imlx_linux -O3 -c $< -o $@
