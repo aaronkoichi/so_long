@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/01 17:46:33 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/01 19:45:54 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@
 # define XK_D 100
 # define XK_ESC 65307
 /*mlx struct*/
+
+enum	e_dir
+{
+	DOWN,
+	UP,
+	LEFT,
+	RIGHT
+};
 
 typedef struct s_pos
 {
@@ -68,6 +76,8 @@ typedef struct s_data {
 	int			counter;
 	t_sprite	d_img;
 	int			exit_check;
+	enum e_dir	dir;
+	int			movement;
 }	t_data;
 
 int			error_exit(int error_num);
