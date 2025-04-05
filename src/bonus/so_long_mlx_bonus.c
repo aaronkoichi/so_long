@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:29:11 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 18:49:15 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	mlx_start(t_list *map)
 		return ;
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win_x, mlx.win_y, "So Long Bonus!");
 	set_spr_data(&mlx);
+	init_numbers(&mlx);
 	set_sprites_bonus(&mlx);
 	mlx_loop_hook(mlx.mlx_ptr, print_all_elem_bonus, &mlx);
 	mlx_hook(mlx.win_ptr, 17, 0, close_win, &mlx);

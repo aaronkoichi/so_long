@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 18:04:26 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 19:06:16 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_sprite {
 	int		bpp;
 	int		line_size;
 	int		endian;
+	t_pos	img_size;
 }	t_sprite;
 
 typedef struct s_spr_b
@@ -73,6 +74,7 @@ typedef struct s_data {
 	t_list		*map_data;
 	t_spr_b		spr_data[2];
 	t_sprite	textures[6];
+	t_sprite	numbers[10];
 	int			win_x;
 	int			win_y;
 	int			counter;
@@ -98,7 +100,7 @@ void		find_player_coordinate(t_list *map, int	*x, int	*y);
 /*Display creation*/
 void		mlx_start(t_list *map);
 void		remove_new_line(t_list **map);
-t_sprite	create_sprite(char *path, void *mlx_ptr);
+t_sprite	create_sprite(char *path, void *mlx_ptr, t_pos pos);
 void		print_ground(t_data *mlx, t_sprite *img);
 void		set_sprites(t_data *mlx);
 void		print_individual_sprites(t_data *mlx,
@@ -123,5 +125,6 @@ void		set_spr_data(t_data *data);
 int			print_all_elem_bonus(t_data *mlx);
 void		set_sprites_bonus(t_data *mlx);
 int			game_movement_bonus(int keysym, t_data *data);
-void		prep_string(t_data *mlx);
+void		process_number(t_data *mlx);
+void		init_numbers(t_data *mlx);
 #endif
