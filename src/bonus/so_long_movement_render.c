@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 22:20:48 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:24:40 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 02:38:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	exec_interpo(t_pos *src, t_pos target, int intensity)
 {
 	src->x
-		= ((SLOW_INT - intensity) * src->x + intensity * target.x) / SLOW_INT;
+		= src->x + ((target.x - src->x) * intensity) / SLOW_INT;
 	src->y
-		= ((SLOW_INT - intensity) * src->y + intensity * target.y) / SLOW_INT;
+		= src->y + ((target.y - src->y) * intensity) / SLOW_INT;
 }
 
 void	interpolation(t_data *mlx, t_pos target)
