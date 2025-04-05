@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:41:13 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 17:44:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	switch_frames(int t_x, int t_y, t_data *mlx)
 		mlx->spr_data[0].frame = 0;
 	else if (mlx->spr_data[0].frame >= 3)
 		mlx->spr_data[0].frame = 0;
-	else if (mlx->frame_counter % 24 == 0)
+	else if (mlx->frame_counter % 4 == 0)
 		mlx->spr_data[0].frame++;
 }
 
