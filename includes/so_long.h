@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:17:19 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 02:40:16 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define XK_D 100
 # define XK_ESC 65307
 /*mlx struct*/
-# define SLOW_INT 20
+# define TOTAL_FRAME 20
 
 enum	e_dir
 {
