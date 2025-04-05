@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 19:39:00 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:54:10 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 19:04:03 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	xpm_image_transparency(t_data *data, t_sprite *sprite, t_sprite *target,
 	t_pos	temp;
 
 	y = 0;
-	while (y < MUL)
+	while (y < sprite->img_size.y)
 	{
 		x = 0;
-		while (x < MUL)
+		while (x < sprite->img_size.x)
 		{
 			pixel_location = (y * sprite->line_size) + (x * sprite->bpp / 8);
 			color = *(unsigned int *)(sprite->pixels + pixel_location);
