@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 22:23:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 23:40:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,31 @@ static void	switch_pos(t_data *mlx)
 		mlx->textures[2] = mlx->spr_data[0].right[mlx->spr_data[0].frame];
 }
 
-static void	switch_frames(int t_x, int t_y, t_data *mlx)
+/*counter:
+ * 1 --> player
+ * else --> enemy*/
+static void	switch_frames(int t_x, int t_y, t_data *mlx, int counter)
 {
-	if ((t_x == mlx->spr_data[0].pos.x
-		&& t_y == mlx->spr_data[0].pos.y) || mlx->frame_counter == 0)
-		mlx->spr_data[0].frame = 0;
-	else if (mlx->spr_data[0].frame >= 3)
-		mlx->spr_data[0].frame = 0;
-	else if (mlx->frame_counter % 4 == 0)
-		mlx->spr_data[0].frame++;
+	if (counter == 1)
+	{
+		if ((t_x == mlx->spr_data[0].pos.x
+			&& t_y == mlx->spr_data[0].pos.y) || mlx->frame_counter == 0)
+			mlx->spr_data[0].frame = 0;
+		else if (mlx->spr_data[0].frame >= 3)
+			mlx->spr_data[0].frame = 0;
+		else if (mlx->frame_counter % 4 == 0)
+			mlx->spr_data[0].frame++;
+	}
+	else
+	{
+		if (mlx->enemy.fps > 1000)
+			mlx->enemy.fps = 0;
+		if (mlx->enemy.frame_num >= 3)
+			mlx->enemy.frame_num = 0;
+		else if (mlx->enemy.fps % 20 == 0)
+			mlx->enemy.frame_num++;
+		mlx->enemy.fps++;
+	}
 }
 
 void	print_player(t_data *mlx)
@@ -46,7 +62,7 @@ void	print_player(t_data *mlx)
 	target.y = target.y * 32;
 	switch_pos(mlx);
 	interpolation(mlx, target);
-	switch_frames(target.x, target.y, mlx);
+	switch_frames(target.x, target.y, mlx, 1);
 	xpm_image_transparency(mlx, &(mlx->textures[2]), &mlx->d_img, mlx->spr_data[0].pos);
 }
 
@@ -62,6 +78,9 @@ int	print_all_elem_bonus(t_data *mlx)
 	if (mlx->exit_check == 1)
 		print_individual_sprites(mlx, 'P', 4, &mlx->d_img);
 	print_player(mlx);
+	switch_frames(0, 0, mlx, 2);
+	mlx->textures[5] = mlx->enemy.frame[mlx->enemy.frame_num];
+	print_individual_sprites(mlx, 'N', 5, &mlx->d_img);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
 		mlx->d_img.img_ptr, 0, 0);
 	process_number(mlx);

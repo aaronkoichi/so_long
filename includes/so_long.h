@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 23:06:22 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 23:34:28 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ typedef struct s_spr_b
 	t_sprite	down[4];
 }	t_spr_b;
 
+typedef struct s_enemy
+{
+	int			frame_num;
+	int			fps;
+	t_sprite	frame[4];
+}	t_enemy;
+
 /*Textures
  * 0 --> Ground
  * 1 --> Wall
@@ -74,6 +81,7 @@ typedef struct s_data {
 	void		*win_ptr;
 	t_list		*map_data;
 	t_spr_b		spr_data[2];
+	t_enemy		enemy;
 	t_sprite	textures[6];
 	t_sprite	numbers[10];
 	int			win_x;

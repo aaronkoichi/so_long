@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 22:28:39 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 23:38:10 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	mlx_start(t_list *map)
 	mlx.counter = 0;
 	mlx.exit_check = 0;
 	mlx.frame_counter = 0;
+	mlx.enemy.fps = 0;
 	init_pos(&mlx);
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)

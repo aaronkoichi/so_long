@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/05 22:32:09 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 23:53:15 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,10 @@ BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
 			 $(SRC_FOLDER)/so_long_check_walls.c \
 			 $(SRC_FOLDER)/so_long_check_map_2.c \
 	   		 $(SRC_FOLDER)/so_long_find_player_coordinate.c \
-			 $(SRC_FOLDER)/so_long_flood_fill.c \
 	   		 $(SRC_FOLDER)/so_long_mlx_sprites.c \
 	   		 $(SRC_FOLDER)/so_long_mlx_map.c \
 	   		 $(SRC_FOLDER)/so_long_mlx_utils.c \
 	   		 $(SRC_FOLDER)/so_long_mlx_movement.c \
-		     $(SRC_FOLDER)/so_long_mlx_exit.c \
 			 $(SRC_FOLDER)/bonus/so_long_check_map_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_game_handling_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_main_bonus.c \
@@ -54,6 +52,8 @@ BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
 			 $(SRC_FOLDER)/bonus/so_long_movement_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_movement_render.c \
 			 $(SRC_FOLDER)/bonus/so_long_init_numbers.c \
+			 $(SRC_FOLDER)/bonus/so_long_ff_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_mlx_exit_bonus.c \
 
 OBJS = $(SRCS:.c=.o)
 
