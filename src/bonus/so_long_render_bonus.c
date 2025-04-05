@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 16:57:11 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 17:41:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	switch_frames(int t_x, int t_y, t_data *mlx)
 	if (t_x == mlx->spr_data[0].pos.x
 		&& t_y == mlx->spr_data[0].pos.y)
 		mlx->spr_data[0].frame = 0;
-	if (mlx->spr_data[0].frame >= 3)
+	else if (mlx->spr_data[0].frame >= 3)
 		mlx->spr_data[0].frame = 0;
-	else
+	else if (mlx->frame_counter % 24 == 0)
 		mlx->spr_data[0].frame++;
 }
 
@@ -47,20 +47,21 @@ void	print_player(t_data *mlx)
 
 	target.x = 0;
 	target.y = 0;
-	find_player_coordinate(mlx->map_data, &target.x, &target.y);
-	target.x = target.x * 32;
-	target.y = target.y * 32;
+		find_player_coordinate(mlx->map_data, &target.x, &target.y);
+		target.x = target.x * 32;
+		target.y = target.y * 32;
+		switch_pos(mlx);
+		if (target.x > mlx->spr_data[0].pos.x)
+			mlx->spr_data[0].pos.x = mlx->spr_data[0].pos.x + 2;
+		else if (target.x < mlx->spr_data[0].pos.x)
+			mlx->spr_data[0].pos.x = mlx->spr_data[0].pos.x - 2;
+		if (target.y > mlx->spr_data[0].pos.y)
+			mlx->spr_data[0].pos.y = mlx->spr_data[0].pos.y + 2;
+		else if (target.y < mlx->spr_data[0].pos.y)
+			mlx->spr_data[0].pos.y = mlx->spr_data[0].pos.y - 2;
 	switch_frames(target.x, target.y, mlx);
-	switch_pos(mlx);
-	if (target.x > mlx->spr_data[0].pos.x)
-		mlx->spr_data[0].pos.x++;
-	else if (target.x < mlx->spr_data[0].pos.x)
-		mlx->spr_data[0].pos.x--;
-	if (target.y > mlx->spr_data[0].pos.y)
-		mlx->spr_data[0].pos.y++;
-	else if (target.y < mlx->spr_data[0].pos.y)
-		mlx->spr_data[0].pos.y--;
 	xpm_image_transparency(mlx, &(mlx->textures[2]), &mlx->d_img, mlx->spr_data[0].pos);
+	mlx->frame_counter++;
 }
 
 int	print_all_elem_bonus(t_data *mlx)

@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/05 16:15:33 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 17:36:18 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,25 +62,30 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-MEM_CHECK = -fsanitize=address -fsanitize=undefined -g3
+# MEM_CHECK = -fsanitize=address -fsanitize=undefined -g3
 
 all : $(NAME)
 	
 bonus : $(BONUS_NAME)
 
 $(BONUS_NAME) : $(BONUS_OBJS)
-	cd mlx_linux && ./configure
-	make -C libft bonus
-	$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	@echo "Compiling MLX.."
+	@cd mlx_linux && ./configure
+	@echo "Compiling libft.."
+	@make -C libft bonus
+	@echo "Compiling game bonus.."
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	@echo "Done!"
 
 
 $(NAME) : $(OBJS)
-	cd mlx_linux && ./configure
-	make -C libft bonus
-	$(CC) $(CFLAGS) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	@cd mlx_linux && ./configure
+	@make -C libft bonus
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	@echo "Done!"
 
 %.o : %.c 
-	$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean: 
 	cd mlx_linux && ./configure clean

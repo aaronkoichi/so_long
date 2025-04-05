@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 20:26:22 by zlee              #+#    #+#              #
-#    Updated: 2025/03/22 13:38:47 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 17:40:34 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,19 +34,27 @@ CC = cc
 all : $(NAME)
 
 bonus: $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $^
+	@echo "Compiling libft bonus"
+	@ar rcs $(NAME) $^
+	@echo "Done!"
 
 $(NAME) : $(OBJ)
-	ar rcs $@ $^
+	@echo "Compiling libft"
+	@ar rcs $@ $^
+	@echo "Done!"
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	@echo "Cleaning object files..."
+	@rm -f $(OBJ) $(OBJ_BONUS)
+	@echo "Done!"
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "Cleaning Executable..."
+	@rm -f $(NAME)
+	@echo "Done!"
 
 re : fclean all
 

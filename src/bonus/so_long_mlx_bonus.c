@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 16:54:22 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 17:29:11 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ void	mlx_start(t_list *map)
 	mlx.map_data = map;
 	mlx.counter = 0;
 	mlx.exit_check = 0;
+	mlx.frame_counter = 0;
 	init_pos(&mlx);
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
 		return ;
-	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win_x, mlx.win_y, "So Long!");
+	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win_x, mlx.win_y, "So Long Bonus!");
 	set_spr_data(&mlx);
 	set_sprites_bonus(&mlx);
 	mlx_loop_hook(mlx.mlx_ptr, print_all_elem_bonus, &mlx);

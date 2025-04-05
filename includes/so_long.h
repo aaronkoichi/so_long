@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 16:06:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 17:02:43 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct s_data {
 	int			exit_check;
 	enum e_dir	dir;
 	int			movement;
+	int			frame_counter;
 }	t_data;
 
 int			error_exit(int error_num);
