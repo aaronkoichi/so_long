@@ -6,22 +6,57 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/01 23:44:42 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 15:41:23 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+static void	switch_pos(t_data *mlx)
+{
+	if (mlx->dir == DOWN)
+		mlx->textures[2] = mlx->spr_data[0].down[mlx->spr_data[0].frame];
+	else if (mlx->dir == UP)
+		mlx->textures[2] = mlx->spr_data[0].up[mlx->spr_data[0].frame];
+	else if (mlx->dir == LEFT)
+		mlx->textures[2] = mlx->spr_data[0].left[mlx->spr_data[0].frame];
+	else if (mlx->dir == RIGHT)
+		mlx->textures[2] = mlx->spr_data[0].right[mlx->spr_data[0].frame];
+}
+
+static void	switch_frames(int t_x, int x_y, t_data *mlx)
+{
+	if (t_x == mlx->spr_data[0].pos.x
+		&& t_x == mlx->spr_data[0].pos.y)
+		mlx->spr_data[0].frame = 0;
+	if (mlx->spr_data[0].frame >= 4)
+		mlx->spr_data[0].frame = 0;
+	else
+		mlx->spr_data[0].frame++;
+}
+
 /*Idea: Write a function where it has a target_x and a target_y.
  * Refer to the t_list map to calculate the target_x and target_y
  * and based on the direction it is facing, make the player move until it
  * reaches the target
- * Make it move 1-2 pixels per movement.*/
+ * Make it move 1-2 pixels per movement.
+ * Make the player switch its direction and face.*/
 void	print_player(t_data *mlx)
 {
+	t_pos	target;
 
-
-
+	switch_frames(target.x, target.y, mlx);
+	switch_pos(mlx);
+	find_player_coordinate(mlx->map_data, &target.x, &target.y);
+	if (target.x > mlx->spr_data[0].pos.x)
+		mlx->spr_data[0].pos.x++;
+	else if (target.x < mlx->spr_data[0].pos.x)
+		mlx->spr_data[0].pos.x--;
+	if (target.y > mlx->spr_data[0].pos.y)
+		mlx->spr_data[0].pos.y++;
+	else if (target.y < mlx->spr_data[0].pos.y)
+		mlx->spr_data[0].pos.y--;
+	xpm_image_transparency(mlx, &(mlx->textures[2]), &mlx->d_img, mlx->spr_data[0].pos);
 }
 
 int	print_all_elem_bonus(t_data *mlx)

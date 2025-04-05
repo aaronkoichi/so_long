@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/01 23:45:02 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 15:16:06 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	mlx_start(t_list *map)
 	mlx.map_data = map;
 	mlx.counter = 0;
 	mlx.exit_check = 0;
+	find_player_coordinate(mlx.map_data, &(mlx.spr_data[0].pos.x),
+		&(mlx.spr_data[0].pos.y));
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
 		return ;

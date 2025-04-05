@@ -6,11 +6,13 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/01 17:35:45 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 15:48:44 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
+BONUS_NAME = so_long_bonus
 
 INCLUDES = -Iincludes/ -Ilibft/
 
@@ -30,7 +32,18 @@ SRCS = $(SRC_FOLDER)/so_long_main.c \
 	   $(SRC_FOLDER)/so_long_mlx_movement.c \
 	   $(SRC_FOLDER)/so_long_mlx_exit.c \
 
+
+BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
+			 $(SRC_FOLDER)/bonus/so_long_check_map_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_game_handling_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_main_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_spr_data_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_render_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_sprites_bonus.c \
+
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 CC = cc
 
@@ -40,6 +53,14 @@ MEM_CHECK = -fsanitize=address -fansanitize=undefined -g3
 
 all : $(NAME)
 	
+bonus : $(BONUS_NAME)
+
+$(BONUS_NAME) : $(BONUS_OBJS)
+	cd mlx_linux && ./configure
+	make -C libft bonus
+	$(CC) $(CFLAGS) $(INCLUDES) $^ ./libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Iincludes -Imlx_linux -lXext -lX11 -lm -lz -o $@
+
+
 $(NAME) : $(OBJS)
 	cd mlx_linux && ./configure
 	make -C libft bonus
@@ -51,12 +72,12 @@ $(NAME) : $(OBJS)
 clean: 
 	cd mlx_linux && ./configure clean
 	make -C libft clean
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	cd libft; rm -rf libft.a
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

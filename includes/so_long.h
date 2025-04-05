@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/01 23:46:04 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 15:12:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_sprite {
 
 typedef struct s_spr_b
 {
+	int			frame;
+	t_pos		pos;
 	t_sprite	left[4];
 	t_sprite	right[4];
 	t_sprite	up[4];
@@ -69,7 +71,7 @@ typedef struct s_data {
 	void		*mlx_ptr;
 	void		*win_ptr;
 	t_list		*map_data;
-	t_spr_b		*spr_data[2];
+	t_spr_b		spr_data[2];
 	t_sprite	textures[6];
 	int			win_x;
 	int			win_y;
