@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 18:49:58 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 22:23:07 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static void	switch_pos(t_data *mlx)
 
 static void	switch_frames(int t_x, int t_y, t_data *mlx)
 {
-	if (t_x == mlx->spr_data[0].pos.x
-		&& t_y == mlx->spr_data[0].pos.y)
+	if ((t_x == mlx->spr_data[0].pos.x
+		&& t_y == mlx->spr_data[0].pos.y) || mlx->frame_counter == 0)
 		mlx->spr_data[0].frame = 0;
 	else if (mlx->spr_data[0].frame >= 3)
 		mlx->spr_data[0].frame = 0;
@@ -35,33 +35,19 @@ static void	switch_frames(int t_x, int t_y, t_data *mlx)
 		mlx->spr_data[0].frame++;
 }
 
-/*Idea: Write a function where it has a target_x and a target_y.
- * Refer to the t_list map to calculate the target_x and target_y
- * and based on the direction it is facing, make the player move until it
- * reaches the target
- * Make it move 1-2 pixels per movement.
- * Make the player switch its direction and face.*/
 void	print_player(t_data *mlx)
 {
 	t_pos	target;
 
 	target.x = 0;
 	target.y = 0;
-		find_player_coordinate(mlx->map_data, &target.x, &target.y);
-		target.x = target.x * 32;
-		target.y = target.y * 32;
-		switch_pos(mlx);
-		if (target.x > mlx->spr_data[0].pos.x)
-			mlx->spr_data[0].pos.x = mlx->spr_data[0].pos.x + 2;
-		else if (target.x < mlx->spr_data[0].pos.x)
-			mlx->spr_data[0].pos.x = mlx->spr_data[0].pos.x - 2;
-		if (target.y > mlx->spr_data[0].pos.y)
-			mlx->spr_data[0].pos.y = mlx->spr_data[0].pos.y + 2;
-		else if (target.y < mlx->spr_data[0].pos.y)
-			mlx->spr_data[0].pos.y = mlx->spr_data[0].pos.y - 2;
+	find_player_coordinate(mlx->map_data, &target.x, &target.y);
+	target.x = target.x * 32;
+	target.y = target.y * 32;
+	switch_pos(mlx);
+	interpolation(mlx, target);
 	switch_frames(target.x, target.y, mlx);
 	xpm_image_transparency(mlx, &(mlx->textures[2]), &mlx->d_img, mlx->spr_data[0].pos);
-	mlx->frame_counter++;
 }
 
 int	print_all_elem_bonus(t_data *mlx)

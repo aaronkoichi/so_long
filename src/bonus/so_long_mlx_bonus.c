@@ -6,12 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 18:49:15 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 22:28:39 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 static void	init_pos(t_data *mlx)
 {
@@ -19,6 +18,8 @@ static void	init_pos(t_data *mlx)
 		&(mlx->spr_data[0].pos.y));
 	mlx->spr_data[0].pos.x = mlx->spr_data[0].pos.x * 32;
 	mlx->spr_data[0].pos.y = mlx->spr_data[0].pos.y * 32;
+	mlx->spr_data[0].target_pos.x = mlx->spr_data[0].pos.x;
+	mlx->spr_data[0].target_pos.y = mlx->spr_data[0].pos.y;
 }
 
 void	mlx_start(t_list *map)

@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/05 20:27:45 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 22:32:09 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRCS = $(SRC_FOLDER)/so_long_main.c \
 	   $(SRC_FOLDER)/so_long_mlx_movement_check.c \
 	   $(SRC_FOLDER)/so_long_mlx_exit.c \
 
-
 BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
 			 $(SRC_FOLDER)/so_long_check_map_1.c \
 			 $(SRC_FOLDER)/so_long_check_walls.c \
@@ -53,6 +52,7 @@ BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
 			 $(SRC_FOLDER)/bonus/so_long_render_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_sprites_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_movement_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_movement_render.c \
 			 $(SRC_FOLDER)/bonus/so_long_init_numbers.c \
 
 OBJS = $(SRCS:.c=.o)
