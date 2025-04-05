@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:58:42 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 19:06:47 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 00:14:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ t_sprite	create_sprite(char *path, void *mlx_ptr, t_pos pos)
 
 void	set_sprites(t_data *mlx)
 {
-	t_pos p;
+	t_pos	p;
 
 	p.x = 32;
 	p.y = 32;
-	mlx->textures[0] = create_sprite("./textures/ground_1.xpm", mlx->mlx_ptr, 
-		p);
-	mlx->textures[1] = create_sprite("./textures/wall.xpm", mlx->mlx_ptr, 
-		p);
+	mlx->textures[0] = create_sprite("./textures/ground_1.xpm", mlx->mlx_ptr,
+			p);
+	mlx->textures[1] = create_sprite("./textures/wall.xpm", mlx->mlx_ptr,
+			p);
 	mlx->textures[2] = create_sprite("./textures/charac/s_frame_1.xpm",
-		mlx->mlx_ptr, p);
+			mlx->mlx_ptr, p);
 	mlx->textures[3] = create_sprite("./textures/food.xpm", mlx->mlx_ptr,
-		  p);
+			p);
 	mlx->textures[4] = create_sprite("./textures/exit.xpm", mlx->mlx_ptr,
-		  p);
+			p);
 }

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 23:34:28 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 00:17:19 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define XK_ESC 65307
 /*mlx struct*/
 # define SLOW_INT 20
+
 enum	e_dir
 {
 	DOWN,
@@ -51,7 +52,7 @@ typedef struct s_sprite {
 	t_pos	img_size;
 }	t_sprite;
 
-typedef struct s_spr_b
+typedef struct s_player
 {
 	int			frame;
 	t_pos		pos;
@@ -60,7 +61,7 @@ typedef struct s_spr_b
 	t_sprite	right[4];
 	t_sprite	up[4];
 	t_sprite	down[4];
-}	t_spr_b;
+}	t_player;
 
 typedef struct s_enemy
 {
@@ -80,7 +81,7 @@ typedef struct s_data {
 	void		*mlx_ptr;
 	void		*win_ptr;
 	t_list		*map_data;
-	t_spr_b		spr_data[2];
+	t_player	player;
 	t_enemy		enemy;
 	t_sprite	textures[6];
 	t_sprite	numbers[10];

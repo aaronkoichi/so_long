@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 23:45:28 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:00:40 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 00:21:08 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 static void	destroy_player(t_data *data, int num)
 {
-	mlx_destroy_image(data->mlx_ptr, data->spr_data[0].down[num].img_ptr);
-	mlx_destroy_image(data->mlx_ptr, data->spr_data[0].up[num].img_ptr);
-	mlx_destroy_image(data->mlx_ptr, data->spr_data[0].left[num].img_ptr);
-	mlx_destroy_image(data->mlx_ptr, data->spr_data[0].right[num].img_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player.down[num].img_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player.up[num].img_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player.left[num].img_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player.right[num].img_ptr);
 }
 
 static void	destroy_enemy(t_data *data)

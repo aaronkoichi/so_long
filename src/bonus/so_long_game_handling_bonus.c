@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:16:26 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 23:43:22 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 00:07:31 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,3 @@ void	movement_check(t_data *data, char *current, char *to_move)
 	else if (*to_move != '1')
 		handle_movement(data, current, to_move);
 }
-

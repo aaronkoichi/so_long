@@ -6,13 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:03:20 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 16:06:49 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 00:10:16 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int movement_bonus_two(int keysym, t_data *data)
+static int	movement_bonus_two(int keysym, t_data *data)
 {
 	if (keysym == XK_D)
 	{
