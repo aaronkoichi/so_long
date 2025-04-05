@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:44:47 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 18:04:50 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	print_all_elem_bonus(t_data *mlx)
 	print_player(mlx);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
 		mlx->d_img.img_ptr, 0, 0);
+	prep_string(mlx);
 	mlx_destroy_image(mlx->mlx_ptr, mlx->d_img.img_ptr);
 	return (0);
 }

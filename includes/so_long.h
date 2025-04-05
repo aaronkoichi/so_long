@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:02:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 18:04:26 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,5 @@ void		set_spr_data(t_data *data);
 int			print_all_elem_bonus(t_data *mlx);
 void		set_sprites_bonus(t_data *mlx);
 int			game_movement_bonus(int keysym, t_data *data);
+void		prep_string(t_data *mlx);
 #endif

@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/05 17:36:18 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/05 18:05:23 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ BONUS_SRCS = $(SRC_FOLDER)/so_long_utils.c \
 			 $(SRC_FOLDER)/bonus/so_long_render_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_sprites_bonus.c \
 			 $(SRC_FOLDER)/bonus/so_long_movement_bonus.c \
+			 $(SRC_FOLDER)/bonus/so_long_text_render.c \
 
 OBJS = $(SRCS:.c=.o)
 

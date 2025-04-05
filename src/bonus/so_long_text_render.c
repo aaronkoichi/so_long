@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_main_bonus.c                               :+:      :+:    :+:   */
+/*   so_long_text_render.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 14:13:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:52:55 by zlee             ###   ########.fr       */
+/*   Created: 2025/04/05 17:55:14 by zlee              #+#    #+#             */
+/*   Updated: 2025/04/05 18:06:21 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	prep_string(t_data *mlx)
 {
-	int		fd;
-	t_list	*map;
+	char	*string_one;
+	char	*string_two;
+	char	*temp;
 
-	map = NULL;
-	if (argc != 2)
-		exit(error_exit(1));
-	fd = open(argv[1], O_RDONLY);
-	if (!fd || ft_strrncmp(argv[1], ".ber", 4))
-		exit(error_exit(2));
-	if (process_map_bonus(fd, &map))
-		mlx_start(map);
-	if (map)
-		ft_lstclear(&map, free);
-	close(fd);
+	string_one = ft_strdup("Moves: ");
+	string_two = ft_itoa(mlx->counter);
+	temp = ft_strjoin(string_one, string_two);
+	mlx_string_put(mlx->mlx_ptr, mlx->win_ptr, 10, 10, 0x000000, temp);
+	free(string_one);
+	free(string_two);
+	free(temp);
 }
