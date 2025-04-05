@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 15:12:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 16:06:37 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,10 @@ void		move_right(t_data *data);
 void		movement_check(t_data *data, char *current, char *to_move);
 int			close_win(t_data *data);
 /*Bonus*/
+int			process_map_bonus(int fd, t_list **map);
 int			check_valid_bonus(t_list *map);
 void		set_spr_data(t_data *data);
 int			print_all_elem_bonus(t_data *mlx);
+void		set_sprites_bonus(t_data *mlx);
+int			game_movement_bonus(int keysym, t_data *data);
 #endif

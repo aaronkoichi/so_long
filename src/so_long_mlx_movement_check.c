@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 16:10:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 16:10:35 by zlee             ###   ########.fr       */
+/*   Created: 2025/03/29 00:30:07 by zlee              #+#    #+#             */
+/*   Updated: 2025/03/30 23:34:12 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	close_win(t_data *data)
 {
@@ -26,4 +26,57 @@ int	close_win(t_data *data)
 	free(data->mlx_ptr);
 	exit (0);
 	return (0);
+}
+
+/* Check if the map contains any collectibles. 
+ * Yes --> returns 0
+ * No --> returns 1*/
+static int	check_collectibles(t_list *list)
+{
+	int	i;
+
+	list = ft_lstfirst(list);
+	while (list)
+	{
+		i = -1;
+		while (((char *)list->content)[++i])
+			if (((char *)list->content)[i] == 'C')
+				return (0);
+		list = list->next;
+	}
+	return (1);
+}
+
+static void	handle_exit(t_data *data, char *current, char *to_move)
+{
+	if (check_collectibles(data->map_data))
+		close_win(data);
+	else
+	{
+		data->exit_check = 1;
+		if (*to_move != '1')
+		{
+			*to_move = 'P';
+			*current = '0';
+		}
+	}
+}
+
+static void	handle_movement(t_data *data, char *current, char *to_move)
+{
+	*to_move = 'P';
+	*current = '0';
+	if (data->exit_check == 1)
+	{
+		*current = 'E';
+		data->exit_check = 0;
+	}
+}
+
+void	movement_check(t_data *data, char *current, char *to_move)
+{
+	if (*to_move == 'E')
+		handle_exit(data, current, to_move);
+	else if (*to_move != '1')
+		handle_movement(data, current, to_move);
 }

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:12:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 15:25:52 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 16:34:12 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static void	set_enemy_two(t_data *data)
 {
 	data->spr_data[1].left[0]
-		= create_sprite("./textures/charac/left_frame_1.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/left_frame_1.xpm", data->mlx_ptr);
 	data->spr_data[1].left[1]
-		= create_sprite("./textures/charac/left_frame_2.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/left_frame_2.xpm", data->mlx_ptr);
 	data->spr_data[1].left[2]
-		= create_sprite("./textures/charac/left_frame_3.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/left_frame_3.xpm", data->mlx_ptr);
 	data->spr_data[1].left[3]
-		= create_sprite("./textures/charac/left_frame_4.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/left_frame_4.xpm", data->mlx_ptr);
 	data->spr_data[1].right[0]
-		= create_sprite("./textures/charac/right_frame_1.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/right_frame_1.xpm", data->mlx_ptr);
 	data->spr_data[1].right[1]
-		= create_sprite("./textures/charac/right_frame_2.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/right_frame_2.xpm", data->mlx_ptr);
 	data->spr_data[1].right[2]
-		= create_sprite("./textures/charac/right_frame_3.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/right_frame_3.xpm", data->mlx_ptr);
 	data->spr_data[1].right[3]
-		= create_sprite("./textures/charac/right_frame_4.xpm", data->mlx_ptr);
+		= create_sprite("./textures/enemy/right_frame_4.xpm", data->mlx_ptr);
 }
 
 static void	set_enemy(t_data *data)
@@ -97,7 +97,7 @@ static void	set_player(t_data *data)
 void	set_spr_data(t_data *data)
 {
 	data->spr_data[0].frame = 0;
-	data->spr_data[1].frame = 1;
+	data->spr_data[1].frame = 0;
 	set_player(data);
 	set_enemy(data);
 }

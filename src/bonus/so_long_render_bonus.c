@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 15:41:23 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/05 16:57:11 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ static void	switch_pos(t_data *mlx)
 		mlx->textures[2] = mlx->spr_data[0].right[mlx->spr_data[0].frame];
 }
 
-static void	switch_frames(int t_x, int x_y, t_data *mlx)
+static void	switch_frames(int t_x, int t_y, t_data *mlx)
 {
 	if (t_x == mlx->spr_data[0].pos.x
-		&& t_x == mlx->spr_data[0].pos.y)
+		&& t_y == mlx->spr_data[0].pos.y)
 		mlx->spr_data[0].frame = 0;
-	if (mlx->spr_data[0].frame >= 4)
+	if (mlx->spr_data[0].frame >= 3)
 		mlx->spr_data[0].frame = 0;
 	else
 		mlx->spr_data[0].frame++;
@@ -45,9 +45,13 @@ void	print_player(t_data *mlx)
 {
 	t_pos	target;
 
+	target.x = 0;
+	target.y = 0;
+	find_player_coordinate(mlx->map_data, &target.x, &target.y);
+	target.x = target.x * 32;
+	target.y = target.y * 32;
 	switch_frames(target.x, target.y, mlx);
 	switch_pos(mlx);
-	find_player_coordinate(mlx->map_data, &target.x, &target.y);
 	if (target.x > mlx->spr_data[0].pos.x)
 		mlx->spr_data[0].pos.x++;
 	else if (target.x < mlx->spr_data[0].pos.x)
