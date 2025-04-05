@@ -14,4 +14,4 @@ Used imagemagick and a python script for converting them into xpm files onto usa
 
 ## Bonus Renders
 ![so_long_1](https://i.imgur.com/4EINoE8.gif)
-![so_long_2](https://i.imgur.com/zSluC4v.mp4)
+![Imgur](https://imgur.com/zSluC4v)
