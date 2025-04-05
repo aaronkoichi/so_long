@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/01 15:12:00 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 03:09:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	mlx_start(t_list *map)
 {
 	t_data	mlx;
 
+	ft_memset(&mlx, 0, sizeof(t_data));
 	mlx.win_x = ft_strlen((char *)map->content) * MUL;
 	mlx.win_y = ft_lstsize(map) * MUL;
 	mlx.map_data = map;
-	mlx.counter = 0;
-	mlx.exit_check = 0;
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
 		return ;
