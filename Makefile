@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 16:59:41 by zlee              #+#    #+#              #
-#    Updated: 2025/04/06 15:18:40 by zlee             ###   ########.fr        #
+#    Updated: 2025/04/06 15:24:36 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,25 +71,25 @@ bonus : $(BONUS_NAME)
 
 $(BONUS_NAME) : $(BONUS_OBJS)
 	@echo "Compiling MLX.."
-	@cd minilibx_linux && ./configure
+	@cd minilibx-linux && ./configure
 	@echo "Compiling libft.."
 	@make -C libft bonus
 	@echo "Compiling game bonus.."
-	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iincludes -Iminilibx_linux -lXext -lX11 -lm -lz -o $@
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lminilibx-linux -lmlx_Linux -L/usr/lib -Iincludes -Iminilibx-linux -lXext -lX11 -lm -lz -o $@
 	@echo "Done!"
 
 
 $(NAME) : $(OBJS)
-	@cd minilibx_linux && ./configure
+	@cd minilibx-linux && ./configure
 	@make -C libft bonus
-	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iincludes -Iminilibx_linux -lXext -lX11 -lm -lz -o $@
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) $^ ./libft/libft.a -Lminilibx-linux -lmlx_Linux -L/usr/lib -Iincludes -Iminilibx-linux -lXext -lX11 -lm -lz -o $@
 	@echo "Done!"
 
 %.o : %.c 
-	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) -I/usr/include -Iminilibx_linux -O3 -c $< -o $@
+	@$(CC) $(CFLAGS) $(MEM_CHECK) $(INCLUDES) -I/usr/include -Iminilibx-linux -O3 -c $< -o $@
 
 clean: 
-	cd minilibx_linux && ./configure clean
+	cd minilibx-linux && ./configure clean
 	make -C libft clean
 	rm -f $(OBJS) $(BONUS_OBJS)
 
