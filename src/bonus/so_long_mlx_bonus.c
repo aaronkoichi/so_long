@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 03:10:20 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:36:42 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	mlx_start(t_list *map)
 	t_data	mlx;
 
 	ft_memset(&mlx, 0, sizeof(t_data));
-	mlx.win_x = ft_strlen((char *)map->content) * MUL;
-	mlx.win_y = ft_lstsize(map) * MUL;
+	mlx.win.x = ft_strlen((char *)map->content) * MUL;
+	mlx.win.y = ft_lstsize(map) * MUL;
 	mlx.map_data = map;
 	init_pos(&mlx);
 	mlx.mlx_ptr = mlx_init();
 	if (!mlx.mlx_ptr)
 		return ;
-	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win_x,
-			mlx.win_y, "So Long Bonus!");
+	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win.x,
+			mlx.win.y, "So Long Bonus!");
 	set_spr_data(&mlx);
 	init_numbers(&mlx);
 	set_sprites_bonus(&mlx);

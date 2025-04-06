@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 14:41:01 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 16:20:56 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@
 # define XK_S 115
 # define XK_D 100
 # define XK_ESC 65307
-/*mlx struct*/
-# define TOTAL_FRAME 20
 
+/*Frame Constants*/
+# define TOTAL_FRAME 100
+# define FRAME_MUL 20
+# define TOTAL_ENEMY_FRAME 200
+
+/*direction*/
 enum	e_dir
 {
 	DOWN,
@@ -85,13 +89,11 @@ typedef struct s_data {
 	t_enemy		enemy;
 	t_sprite	textures[6];
 	t_sprite	numbers[10];
-	int			win_x;
-	int			win_y;
+	t_pos		win;
 	int			counter;
-	t_sprite	d_img;
+	t_sprite	display;
 	int			exit_check;
 	enum e_dir	dir;
-	int			movement;
 	int			frame_counter;
 }	t_data;
 

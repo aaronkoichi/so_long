@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 18:36:35 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 14:41:30 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:47:18 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	process_number(t_data *mlx)
 	while (text[++i])
 	{
 		put_img_on_canvas(mlx, &mlx->numbers[text[i] - '0'],
-			&mlx->d_img, pos);
+			&mlx->display, pos);
 		pos.x += 17;
 	}
 	free(text);
