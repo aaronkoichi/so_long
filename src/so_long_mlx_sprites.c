@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:58:42 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:14:13 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:47:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 t_sprite	create_sprite(char *path, void *mlx_ptr, t_pos pos)
 {

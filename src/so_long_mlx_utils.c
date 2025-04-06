@@ -6,13 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 19:39:00 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 19:04:03 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:15:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
-void	xpm_image_transparency(t_data *data, t_sprite *sprite, t_sprite *target,
+void	put_img_on_canvas(t_data *data, t_sprite *sprite, t_sprite *target,
 				t_pos offset)
 {
 	int		y;

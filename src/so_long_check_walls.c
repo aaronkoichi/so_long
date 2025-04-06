@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:11:55 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:32:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:15:57 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 /*Checks if the middle line of the map is a has a wall on both ends.*/
 static int	check_middle_wall(char *map_line)

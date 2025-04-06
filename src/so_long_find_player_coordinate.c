@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 15:00:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/22 15:09:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:43:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 /*Find the player's coordinate 
  * (Maybe in the future you would need a function to find all coordinates

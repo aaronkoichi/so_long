@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 22:30:48 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:45:27 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:44:02 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 void	move_up(t_data *data)
 {

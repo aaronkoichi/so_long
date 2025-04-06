@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:45:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:32:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:12:50 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 int	main(int argc, char **argv)
 {

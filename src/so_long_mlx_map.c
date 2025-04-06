@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:03:03 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/30 23:56:31 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 15:16:09 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 void	print_ground(t_data *mlx, t_sprite *img)
 {
@@ -26,7 +26,7 @@ void	print_ground(t_data *mlx, t_sprite *img)
 		pos.x = 0;
 		while (((char *)map->content)[++i])
 		{
-			xpm_image_transparency(mlx, &(mlx->textures[0]), img, pos);
+			put_img_on_canvas(mlx, &(mlx->textures[0]), img, pos);
 			pos.x += MUL;
 		}
 		pos.y += MUL;
@@ -50,7 +50,7 @@ void	print_individual_sprites(t_data *mlx,
 		while (((char *)map->content)[++i])
 		{
 			if (((char *)map->content)[i] == element)
-				xpm_image_transparency(mlx, &(mlx->textures[num]), img, pos);
+				put_img_on_canvas(mlx, &(mlx->textures[num]), img, pos);
 			pos.x += MUL;
 		}
 		pos.y += MUL;

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 02:40:16 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:41:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void		print_individual_sprites(t_data *mlx,
 				char element, int num, t_sprite *img);
 int			print_all_elements(t_data *mlx);
 /*Manipulate the pixels in the image for transparency*/
-void		xpm_image_transparency(t_data *data, t_sprite *sprite,
+void		put_img_on_canvas(t_data *data, t_sprite *sprite,
 				t_sprite *target, t_pos offset);
 void		custom_pixel_put(t_data *data, t_sprite *spr, t_pos pos, int color);
 /*Game Movement*/

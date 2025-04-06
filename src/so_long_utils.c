@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:57:08 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 23:09:45 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:48:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 int	error_exit(int error_num)
 {

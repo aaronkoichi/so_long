@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:28:12 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:41:14 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	print_player(t_data *mlx)
 	switch_pos(mlx);
 	interpolation(mlx, target);
 	switch_frames(target.x, target.y, mlx, 1);
-	xpm_image_transparency(mlx, &(mlx->textures[2]),
+	put_img_on_canvas(mlx, &(mlx->textures[2]),
 		&mlx->d_img, mlx->player.pos);
 }
 

@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:30:07 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/05 17:27:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:47:35 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 /* Check if the map contains any collectibles. 
  * Yes --> returns 0

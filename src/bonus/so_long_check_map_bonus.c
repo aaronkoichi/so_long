@@ -6,11 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 14:15:07 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:07:02 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:44:17 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "so_long.h"
 
 int	check_valid_bonus(t_list *map)
 {
