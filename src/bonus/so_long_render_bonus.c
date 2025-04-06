@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 19:33:38 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 16:14:23 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 21:20:27 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	print_player(t_data *mlx)
 	target.x = 0;
 	target.y = 0;
 	find_player_coordinate(mlx->map_data, &target.x, &target.y);
-	target.x = target.x * 32;
-	target.y = target.y * 32;
+	target.x = target.x * MUL;
+	target.y = target.y * MUL;
 	switch_pos(mlx);
 	interpolation(mlx, target);
 	switch_frames(target.x, target.y, mlx, 1);

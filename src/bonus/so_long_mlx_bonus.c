@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:01:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 15:36:42 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 21:24:33 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	init_pos(t_data *mlx)
 {
 	find_player_coordinate(mlx->map_data, &(mlx->player.pos.x),
 		&(mlx->player.pos.y));
-	mlx->player.pos.x = mlx->player.pos.x * 32;
-	mlx->player.pos.y = mlx->player.pos.y * 32;
+	mlx->player.pos.x = mlx->player.pos.x * MUL;
+	mlx->player.pos.y = mlx->player.pos.y * MUL;
 	mlx->player.target_pos.x = mlx->player.pos.x;
 	mlx->player.target_pos.y = mlx->player.pos.y;
 }

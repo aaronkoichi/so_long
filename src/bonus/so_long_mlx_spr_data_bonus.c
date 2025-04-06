@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:12:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:19:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 21:21:14 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	set_enemy(t_data *data)
 {
 	t_pos	p;
 
-	p.x = 32;
-	p.y = 32;
+	p.x = MUL;
+	p.y = MUL;
 	data->enemy.frame[0]
 		= create_sprite("./textures/enemy/down_frame_1.xpm", data->mlx_ptr, p);
 	data->enemy.frame[1]
@@ -32,8 +32,8 @@ static void	set_player_two(t_data *data)
 {
 	t_pos	p;
 
-	p.x = 32;
-	p.y = 32;
+	p.x = MUL;
+	p.y = MUL;
 	data->player.left[0]
 		= create_sprite("./textures/charac/a_frame_1.xpm", data->mlx_ptr, p);
 	data->player.left[1]
@@ -56,8 +56,8 @@ static void	set_player(t_data *data)
 {
 	t_pos	p;
 
-	p.x = 32;
-	p.y = 32;
+	p.x = MUL;
+	p.y = MUL;
 	data->player.up[0]
 		= create_sprite("./textures/charac/w_frame_1.xpm", data->mlx_ptr, p);
 	data->player.up[1]

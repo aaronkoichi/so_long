@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 17:42:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 00:20:34 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/06 21:20:09 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	set_sprites_bonus(t_data *mlx)
 {
 	t_pos	p;
 
-	p.x = 32;
-	p.y = 32;
+	p.x = MUL;
+	p.y = MUL;
 	mlx->textures[0] = create_sprite("./textures/ground_1.xpm",
 			mlx->mlx_ptr, p);
 	mlx->textures[1] = create_sprite("./textures/wall.xpm", mlx->mlx_ptr, p);
