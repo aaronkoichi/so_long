@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/07 15:17:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/08 00:38:23 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ typedef struct s_pos
 
 typedef struct s_sprite {
 	void	*img_ptr;
-	int		img_x;
-	int		img_y;
 	char	*pixels;
 	int		bpp;
 	int		line_size;
@@ -107,7 +105,7 @@ void		find_player_coordinate(t_list *map, int	*x, int	*y);
 /*Display creation*/
 void		mlx_start(t_list *map);
 void		remove_new_line(t_list **map);
-t_sprite	create_sprite(char *path, void *mlx_ptr, t_pos pos);
+t_sprite	create_sprite(char *path, void *mlx_ptr);
 void		print_ground(t_data *mlx, t_sprite *img);
 void		set_sprites(t_data *mlx);
 void		print_individual_sprites(t_data *mlx,
