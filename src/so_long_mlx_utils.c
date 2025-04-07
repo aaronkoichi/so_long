@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 19:39:00 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 15:37:54 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 15:02:02 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	custom_pixel_put(t_data *data, t_sprite *spr, t_pos pos, int color)
 {
 	char	*dst;
 
-	if (pos.x >= 0 && pos.y < data->win.x && pos.y >= 0 && pos.y < data->win.y
+	if (pos.x >= 0 && pos.x <= data->win.x && pos.y >= 0 && pos.y <= data->win.y
 		&& color != (int)0xFF000000)
 	{
 		dst = spr->pixels + ((pos.y * spr->line_size)
