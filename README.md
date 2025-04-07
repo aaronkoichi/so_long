@@ -15,7 +15,7 @@ collectibles in order to exit.
 
 Note: This game works best at 2k / 4k displays. It may be too large for 1080p screens.
 
-You can get the 1080p version of the game [here](https://www.google.com/).
+You can get the 1080p version of the game [here](https://github.com/aaronkoichi/so_long_1080p).
 
 This game uses Makefiles and C to compile the game:
 
