@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:03:03 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 15:48:01 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 12:53:50 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void	print_individual_sprites(t_data *mlx,
 int	print_all_elements(t_data *mlx)
 {
 	mlx->display.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->win.x, mlx->win.y);
-	mlx->display.pixels = mlx_get_data_addr(mlx->display.img_ptr, &mlx->display.bpp,
-			&mlx->display.line_size, &mlx->display.endian);
+	mlx->display.pixels = mlx_get_data_addr(mlx->display.img_ptr,
+			&mlx->display.bpp, &mlx->display.line_size, &mlx->display.endian);
 	print_ground(mlx, &mlx->display);
 	print_individual_sprites(mlx, '1', 1, &mlx->display);
 	print_individual_sprites(mlx, 'C', 3, &mlx->display);
