@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 21:22:12 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 14:23:27 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define XK_ESC 65307
 
 /*Frame Constants*/
-# define TOTAL_FRAME 100
+# define TOTAL_FRAME 20
 # define FRAME_MUL 20
 # define TOTAL_ENEMY_FRAME 200
 
