@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:11:55 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 15:15:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 12:26:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ line, has wall on the left/right panel*/
 int	check_all_walls(t_list *map)
 {
 	if (!check_first_last_wall((char *)ft_lstfirst(map)->content))
-		return (0);
+		return (error_exit(6));
 	else
 	{
 		map = map->next;
