@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 14:13:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/07 12:42:54 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/08 01:18:20 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ int	main(int argc, char **argv)
 	if (fd < 0 || ft_strrncmp(argv[1], ".ber", 4))
 		exit(error_exit(2));
 	if (process_map_bonus(fd, &map))
+	{
+		close(fd);
 		mlx_start(map);
+	}
+	close(fd);
 	if (map)
 		ft_lstclear(&map, free);
-	close(fd);
 }
