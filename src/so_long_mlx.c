@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:36:06 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 15:37:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 15:19:46 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	mlx_start(t_list *map)
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, mlx.win.x, mlx.win.y, "So Long!");
 	set_sprites(&mlx);
 	mlx_loop_hook(mlx.mlx_ptr, print_all_elements, &mlx);
-	mlx_hook(mlx.win_ptr, 17, 0, close_win, &mlx);
+	mlx_hook(mlx.win_ptr, DestroyNotify, 0, close_win, &mlx);
 	mlx_key_hook(mlx.win_ptr, game_movement, &mlx);
 	mlx_loop(mlx.mlx_ptr);
 	return ;

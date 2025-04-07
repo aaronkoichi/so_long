@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:46:23 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/07 14:23:27 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 15:17:37 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 # include "mlx.h"
 # include "libft.h"
 # include <fcntl.h>
-
+# include <X11/X.h>
+# include <X11/keysym.h>
 /*pixel to sprite ratio*/
 # define MUL 64
-/* keysyms imported from keysymdef.h */
-# define XK_W 119
-# define XK_A 97
-# define XK_S 115
-# define XK_D 100
-# define XK_ESC 65307
 
 /*Frame Constants*/
 # define TOTAL_FRAME 20

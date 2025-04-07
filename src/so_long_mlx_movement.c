@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 22:30:48 by zlee              #+#    #+#             */
-/*   Updated: 2025/04/06 14:44:02 by zlee             ###   ########.fr       */
+/*   Updated: 2025/04/07 15:17:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,15 @@ void	move_right(t_data *data)
 
 int	game_movement(int keysym, t_data *data)
 {
-	if (keysym == XK_W)
+	if (keysym == XK_w)
 		move_up(data);
-	else if (keysym == XK_A)
+	else if (keysym == XK_a)
 		move_left(data);
-	else if (keysym == XK_S)
+	else if (keysym == XK_s)
 		move_down(data);
-	else if (keysym == XK_D)
+	else if (keysym == XK_d)
 		move_right(data);
-	else if (keysym == XK_ESC)
+	else if (keysym == XK_Escape)
 		close_win(data);
 	return (0);
 }
